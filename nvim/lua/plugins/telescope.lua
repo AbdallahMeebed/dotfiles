@@ -4,6 +4,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      'debugloop/telescope-undo.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -64,6 +65,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension, 'undo')
+      -- optional: 
+      vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
