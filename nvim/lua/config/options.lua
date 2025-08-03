@@ -24,9 +24,6 @@ vim.opt.showmode = false            -- we are experienced, wo don't need the "--
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Enable break indent
-vim.opt.breakindent = true
-
 -- Save undo history
 vim.opt.undofile = true
 
