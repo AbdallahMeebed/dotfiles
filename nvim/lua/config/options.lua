@@ -56,6 +56,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 7
 
+vim.cmd.colorscheme("habamax")
+
+-- Transparent background
 vim.cmd [[
   highlight Normal guibg=none
   highlight NonText guibg=none
