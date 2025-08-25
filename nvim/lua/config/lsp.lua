@@ -6,3 +6,11 @@ vim.lsp.config('sv_ls', {
 })
 
 vim.lsp.enable('sv_ls')
+
+vim.lsp.config('cpp_ls', {
+  cmd = {'clangd'},
+  filetypes = {'cpp', 'hpp'},
+  root_markers = {'.git', '.clangd'},
+})
+
+vim.lsp.enable('cpp_ls')
