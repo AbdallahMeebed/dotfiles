@@ -216,6 +216,7 @@ exec_always picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0
 # Allocate applications to workspaces
 for_window [class="firefox"] move to workspace $ws2
 for_window [class="discord"] move to workspace $ws3
+for_window [class="thunderbird"] move to workspace $ws3
 
 # Color shemes for windows 
 set $bgcolor    #86000099
