@@ -1,0 +1,9 @@
+[opener]
+read = [
+    {run = "zathura $@", orphan = true},
+]
+
+[open]
+prepend_rules = [
+    {name = "*.pdf", use = "read"},
+]
