@@ -45,5 +45,9 @@ return {
         -- Search backlinks of current buffer
 		vim.api.nvim_set_keymap("n", "<leader>zb", "<Cmd>ZkBacklinks<CR>", opts)
 
+        require('which-key').add {
+            { '<leader>z', group = '[Z]k' },
+        }
+
 	end,
 }

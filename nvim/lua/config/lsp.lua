@@ -14,3 +14,8 @@ vim.lsp.config('cpp_ls', {
 })
 
 vim.lsp.enable('cpp_ls')
+vim.lsp.config('python_ls', {
+    cmd = {'pylsp'},
+    filetypes = {'python'},
+})
+vim.lsp.enable('python_ls')
