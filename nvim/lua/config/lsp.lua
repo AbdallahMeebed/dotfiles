@@ -19,3 +19,14 @@ vim.lsp.config('python_ls', {
     filetypes = {'python'},
 })
 vim.lsp.enable('python_ls')
+
+vim.lsp.config('typst_ls', {
+    cmd = {'tinymist'},
+    filetypes = {'typst'},
+    settings = {
+        exportPDF = 'never',
+        lint = {enabled = true}
+    }
+})
+
+vim.lsp.enable('typst_ls')
