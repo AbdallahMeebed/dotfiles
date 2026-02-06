@@ -9,11 +9,12 @@ vim.lsp.enable('sv_ls')
 
 vim.lsp.config('cpp_ls', {
   cmd = {'clangd'},
-  filetypes = {'cpp', 'hpp'},
+  filetypes = {'cpp', 'hpp', 'c', 'h'},
   root_markers = {'.git', '.clangd'},
 })
 
 vim.lsp.enable('cpp_ls')
+
 vim.lsp.config('python_ls', {
     cmd = {'pylsp'},
     filetypes = {'python'},
