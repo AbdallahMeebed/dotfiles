@@ -1,0 +1,3 @@
+#!/bin/sh
+
+convert $HOME/Pictures/wallpapers/June_2025_Wallpaper.jpg RGB:- | i3lock --nofork -et --raw 1920x1080:rgb --image /dev/stdin
