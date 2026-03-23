@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -36,10 +36,13 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+ && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%- && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle && $refresh_i3status
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -64,7 +67,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # Set the rate of keyboard
-exec_always --no-startup-id xset r rate 200 30
+exec_always --no-startup-id xset r rate 250 30
 
 # change focus
 bindsym $mod+h focus left
@@ -222,7 +225,7 @@ exec_always picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0
 
 # Allocate applications to workspaces
 for_window [class="firefox"] move to workspace $ws2
-for_window [class="thunderbird"] move to workspace $ws3
+# for_window [class="thunderbird"] move to workspace $ws3
 
 # Color shemes for windows 
 set $bgcolor    #86000099
@@ -268,3 +271,7 @@ exec --no-startup-id numlockx on
 
 # Add layout
 exec_always --no-startup-id setxkbmap -layout "us,us(intl)" -option grp:win_space_toggle
+
+# Configure trackpad
+exec --no-startup-id xinput set-prop "VEN_0488:00 0488:104B Touchpad" "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "VEN_0488:00 0488:104B Touchpad" "libinput Tapping Enabled" 1
