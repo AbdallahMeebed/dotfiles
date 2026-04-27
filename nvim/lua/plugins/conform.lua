@@ -6,6 +6,7 @@ require("conform").setup({
 		go = { "goimports", "gofmt" },
 		-- You can also customize some of the format options for the filetype
 		rust = { "rustfmt", lsp_format = "fallback" },
+        cpp = {"clang-format"},
 		-- You can use a function here to determine the formatters dynamically
 		python = function(bufnr)
 			if require("conform").get_formatter_info("ruff_format", bufnr).available then

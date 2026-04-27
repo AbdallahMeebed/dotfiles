@@ -9,7 +9,7 @@ vim.lsp.enable('sv_ls')
 
 vim.lsp.config('cpp_ls', {
   cmd = {'clangd'},
-  filetypes = {'cpp', 'hpp', 'c', 'h'},
+  filetypes = {'cpp', 'c'},
   root_markers = {'.git', '.clangd'},
 })
 
@@ -31,3 +31,9 @@ vim.lsp.config('typst_ls', {
 })
 
 vim.lsp.enable('typst_ls')
+
+vim.lsp.config('rust_ls', {
+    cmd = {'rust-analyzer'},
+    filetypes = {'rust'},
+})
+vim.lsp.enable('rust_ls')
