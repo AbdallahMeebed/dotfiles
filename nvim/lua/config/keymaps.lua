@@ -26,6 +26,8 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 --  See `:help wincmd` for a list of all window commands
 -- LSP related keymaps
 vim.keymap.set('n', 'grk', vim.diagnostic.open_float, { desc = 'Show float (LSP)' })
+vim.keymap.set('n', 'grd', vim.lsp.buf.definition, { desc = 'Show float (LSP)' })
+
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
