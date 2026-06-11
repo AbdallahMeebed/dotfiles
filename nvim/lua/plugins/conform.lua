@@ -7,14 +7,15 @@ require("conform").setup({
 		-- You can also customize some of the format options for the filetype
 		rust = { "rustfmt", lsp_format = "fallback" },
         cpp = {"clang-format"},
+        python = {"autopep8"},
 		-- You can use a function here to determine the formatters dynamically
-		python = function(bufnr)
-			if require("conform").get_formatter_info("ruff_format", bufnr).available then
-				return { "ruff_format" }
-			else
-				return { "isort", "black" }
-			end
-		end,
+		-- python = function(bufnr)
+		-- 	if require("conform").get_formatter_info("ruff_format", bufnr).available then
+		-- 		return { "ruff_format" }
+		-- 	else
+		-- 		return { "isort", "black" }
+		-- 	end
+		-- end,
 		-- Use the "*" filetype to run formatters on all filetypes.
 		["*"] = { "codespell" },
 		-- Use the "_" filetype to run formatters on filetypes that don't
@@ -93,7 +94,7 @@ require("conform").setup({
 })
 
 -- You can set formatters_by_ft and formatters directly
-require("conform").formatters_by_ft.lua = { "stylua" }
+-- require("conform").formatters_by_ft.lua = { "stylua" }
 vim.keymap.set("n", "<leader>f", function()
 	require("conform").format({ async = true })
 end, { desc = "Format buffer" })

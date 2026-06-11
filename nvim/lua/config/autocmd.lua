@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'rust', 'typst', 'c', 'cmake', 'vhdl' },
+    pattern = { 'rust', 'typst', 'c', 'cmake', 'vhdl', 'python' },
     callback = function()
         -- syntax highlighting, provided by Neovim
         vim.treesitter.start()
