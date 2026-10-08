@@ -8,6 +8,7 @@ require("conform").setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
         cpp = {"clang-format"},
         python = {"autopep8"},
+        latex = {"latexindent"},
 		-- You can use a function here to determine the formatters dynamically
 		-- python = function(bufnr)
 		-- 	if require("conform").get_formatter_info("ruff_format", bufnr).available then

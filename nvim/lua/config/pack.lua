@@ -18,6 +18,8 @@ vim.pack.add({
     gh("nvim-treesitter/nvim-treesitter"),
     gh("zk-org/zk-nvim"),
     gh("MeanderingProgrammer/render-markdown.nvim"),
+
+    gh("lervag/vimtex"),
 })
 
 require("plugins.conform")
@@ -27,3 +29,4 @@ require("mason").setup()
 require("plugins.mini")
 require("plugins.treesitter")
 require("plugins.zk")
+require("plugins.vimtex")
