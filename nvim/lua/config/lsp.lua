@@ -37,3 +37,10 @@ vim.lsp.config('rust_ls', {
     filetypes = {'rust'},
 })
 vim.lsp.enable('rust_ls')
+
+vim.lsp.config('haskell_ls', {
+    cmd = {'haskell-language-server-wrapper', '--lsp'},
+    filetypes = {'haskell'},
+})
+vim.lsp.enable('haskell_ls')
+
